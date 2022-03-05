@@ -1,0 +1,47 @@
+logging:
+  level:
+    root: INFO
+    com:
+      demo: INFO
+    httpclient:
+      wire: INFO
+    org:
+      apache:
+        http: INFO
+      springframework:
+        web:
+          client:
+            RestTemplate: INFO
+
+spring:
+  profiles:
+    active: local
+  jackson:
+    default-property-inclusion: NON_NULL
+  jms:
+    servicebus:
+      connection-string: MyConnectionStringPointingToRoot
+      idle-timeout: 1100000
+      pricing-tier: standard
+  devtools:
+    add-properties: false
+
+openapi:
+  application-title: Customer API
+  application-description: Customer API
+  application-version: 1.0
+  contact:
+    email: demo@demo.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info, mappings, metrics, httptrace, beans
+
+httpheader:
+  subscription: mySubscription
+  value: mySubscriptionValue

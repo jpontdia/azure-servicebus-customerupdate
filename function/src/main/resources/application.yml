@@ -1,0 +1,32 @@
+server:
+  port: 8090
+  error:
+    include-message: always
+
+logging:
+  level:
+    root: INFO
+    com:
+      demo: INFO
+    sql: DEBUG
+    org:
+      springframework:
+        cloud:
+          function:
+            utils:
+              FunctionClassUtils: ERROR
+
+spring:
+  application:
+    name: LoggingTable
+    version: 1
+  profiles:
+    active: local
+
+azure:
+  log:
+    store:
+      # In the azure portal, select the Log Analytic Workspace
+      # on left side pane, select Agents management and copy Workspace ID and Primary key
+      azure-shared-key: myprimarykey
+      azure-wid: my-workspaceid
